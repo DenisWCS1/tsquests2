@@ -2,16 +2,17 @@ import * as assert from 'assert';
 
 class BankCustomer {
     private userName: string;
+    private cardNumber: string;
     constructor(userName: string, cardNumber: string) {
         this.userName = userName;
-
+        this.cardNumber = cardNumber;
     }
     public getName(): string {
         return this.userName;
     }
 
-    public verifyPinInput(cardNumber: string): boolean {
-        return cardNumber === '3579' ? true : false;
+    public verifyPinInput(card: string): boolean {
+        return card === this.cardNumber ? true : false;
     }
 }
 
